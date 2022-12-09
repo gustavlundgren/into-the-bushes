@@ -8,6 +8,7 @@ public class MoveToMouse : MonoBehaviour
     public float speed = 5f;
     private Vector3 target;
     private Camera cam;
+    [SerializeField] GameObject ring;
 
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class MoveToMouse : MonoBehaviour
         {
             target = cam.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
+            Instantiate(ring, target, Quaternion.identity);
         }
 
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);

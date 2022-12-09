@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  ring: {fileID: 3253890767985432664, guid: e91ec341bf0153e4db7e59be621cc104, type: 3}
 --- !u!61 &103885492
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -368,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 103885490}
-  speed: 100
+  speed: 5
 --- !u!1 &665155238
 GameObject:
   m_ObjectHideFlags: 0
