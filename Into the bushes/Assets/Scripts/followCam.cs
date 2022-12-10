@@ -29,12 +29,12 @@ public class followCam : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x - 15, transform.position.y, transform.position.z), speed * Time.deltaTime);
         }
 
-        if (playerPos.y > 0.8)
+        if (playerPos.y > 0.7)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y + 15, transform.position.z), speed * Time.deltaTime);
         }
 
-        if (playerPos.y < 0.2)
+        if (playerPos.y < 0.69)
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y - 15, transform.position.z), speed * Time.deltaTime);
         }
