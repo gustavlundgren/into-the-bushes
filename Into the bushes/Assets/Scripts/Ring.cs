@@ -4,12 +4,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ring : MonoBehaviour
-{ 
+{
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 }

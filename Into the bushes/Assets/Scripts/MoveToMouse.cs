@@ -23,6 +23,10 @@ public class MoveToMouse : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            GameObject[] rings = GameObject.FindGameObjectsWithTag("Ring");
+            foreach (GameObject ring in rings)
+            GameObject.Destroy(ring);
+
             target = cam.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
             Instantiate(ring, target, Quaternion.identity);
