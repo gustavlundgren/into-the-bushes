@@ -9,13 +9,13 @@ public class sceneSwith : MonoBehaviour
 
     public float transitionTime = 1f;
 
-    //private void Update()
-    //{
-    //   if (Input.GetMouseButtonDown(0))
-    //    {
-    //        LoadNextLevel();
-    //    }
-    //}
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            LoadNextLevel();
+        }
+    }
 
     public void LoadNextLevel()
     {

@@ -16,7 +16,7 @@ public class EntryCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sceneSwither = GameObject.FindGameObjectsWithTag("LevelLoader").GetComponenet<sceneSwith>();
+        // sceneSwither = GameObject.FindGameObjectsWithTag("LevelLoader").GetComponenet<sceneSwith>();
     }
 
     void OnCollisionStay2D(Collision2D collision)
