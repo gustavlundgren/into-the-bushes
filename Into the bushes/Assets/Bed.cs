@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class Bed : MonoBehaviour
 {
 
     public GameObject game;
+    public Game gameScript;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        gameScript = game.GetComponent<Game>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+        void OnTriggerStay2D(Collider2D other)
     {
-        
+        print("enter");
     }
 }
