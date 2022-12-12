@@ -9,17 +9,9 @@ public class sceneSwith : MonoBehaviour
 
     public float transitionTime = 1f;
 
-    private void Update()
+    public void LoadNextLevel(int level)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            LoadNextLevel();
-        }
-    }
-
-    public void LoadNextLevel()
-    {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel(level));
     }
 
     IEnumerator LoadLevel(int levelIndex)
