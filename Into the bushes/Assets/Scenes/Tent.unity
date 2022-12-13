@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &74451526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4977929431231924177, guid: a03b52b3f6828f040bc7c4726d876511, type: 3}
+  m_PrefabInstance: {fileID: 1128765188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &195218567
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c44f4e5faa61c4982e5ce97b78b96e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLoad: {fileID: 585939772}
+  levelLoader: {fileID: 585939772}
 --- !u!50 &195218569
 Rigidbody2D:
   serializedVersion: 4
@@ -187,7 +192,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -537,12 +542,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424473120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.13, y: 1.55, z: 2}
+  m_LocalPosition: {x: -1.54, y: 1.27, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1424473123
 BoxCollider:
@@ -569,7 +574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74850bed8ebe3c4892dfd5bc2fff7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  game: {fileID: 0}
+  game: {fileID: 74451526}
+  gameScript: {fileID: 0}
 --- !u!1001 &1518084882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -582,6 +588,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3546887872502110408, guid: 75f215c08a0aa5b42af2f86de61b5bbe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546887872502110408, guid: 75f215c08a0aa5b42af2f86de61b5bbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -591,7 +601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3546887872502110408, guid: 75f215c08a0aa5b42af2f86de61b5bbe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3546887872502110408, guid: 75f215c08a0aa5b42af2f86de61b5bbe, type: 3}
       propertyPath: m_LocalRotation.w

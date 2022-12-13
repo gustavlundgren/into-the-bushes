@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static System.Runtime.CompilerServices.RuntimeHelpers;
 
-public class EntryCheck : MonoBehaviour
+public class Bird : MonoBehaviour
 {
-    public GameObject levelLoader;
+    private bool isCatched = false;
+    public float difficulty = 0.2f;
 
-    private bool changeScene;
 
     void Update()
     {
-        if (Input.GetKeyDown("e") && changeScene)
+        if (isCatched && Input.GetKeyDown("e"))
         {
-            levelLoader.GetComponent<sceneSwith>().LoadNextLevel(1);
+            print("Catch");
+
+           if (Random.Range(0f, 1f) < difficulty)
+           {
+                Destroy(gameObject);
+           }
         }
     }
 
@@ -21,7 +25,7 @@ public class EntryCheck : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            changeScene = true;
+            isCatched = true;
         }
     }
 
@@ -29,7 +33,8 @@ public class EntryCheck : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            changeScene = false;
+            isCatched = false;
         }
     }
+
 }

@@ -30,6 +30,7 @@ public class MoveToMouse : MonoBehaviour
             target = cam.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
             Instantiate(ring, target, Quaternion.identity);
+            target.y += 1.5f;
         }
 
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
