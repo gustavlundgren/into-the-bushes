@@ -5,19 +5,22 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
 public class Frog : MonoBehaviour
 {
-    //public bool jumpReady;
-    //public float jumpCD = 1.5f;
-    //public float jumpCDcurrent = 0f;
+    public bool jumpReady;
+    public float jumpCD = 1.5f;
+    public float jumpCDcurrent = 0f;
 
 
     public GameObject player;
     public float speed = 500f;
     private Vector3 dirToPlayer;
     private Vector3 newPos;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class Frog : MonoBehaviour
         player = GameObject.Find("Player");
 
         newPos = transform.position;
+
+        
     }
 
 
@@ -33,31 +38,32 @@ public class Frog : MonoBehaviour
     {
         dirToPlayer = transform.position - player.transform.position;
 
-        if (Vector2.Distance(transform.position, player.transform.position) < 4)
+        if (Vector3.Distance(transform.position, player.transform.position) < 4 && jumpReady)
         {
-            // jumpCDcurrent = 0f;
+            jumpCDcurrent = 0f;
 
             
             newPos = transform.position + dirToPlayer;
 
-            /*
-            if (jumpCDcurrent >= jumpCD)
-            {
-                jumpReady = true;
-            }
-            else
-            {
-                jumpCDcurrent += Time.deltaTime;
-                jumpReady = false;
-                jumpCDcurrent = Mathf.Clamp(jumpCDcurrent, 0f, jumpCD);
-            }
-            */
-            
+            transform.Rotate (Vector3(0,0,3) * Time.deltaTime);
+        }
+
+        
+
+        if (jumpCDcurrent >= jumpCD)
+        {
+            jumpReady = true;
+        }
+        else
+        {
+            jumpCDcurrent += Time.deltaTime;
+            jumpReady = false;
+            jumpCDcurrent = Mathf.Clamp(jumpCDcurrent, 0f, jumpCD);
         }
 
         print(newPos + "pos");
         print(dirToPlayer + "dir");
         
-        transform.position = Vector2.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
     }
 }
