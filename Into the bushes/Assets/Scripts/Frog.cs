@@ -25,11 +25,9 @@ public class Frog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
 
         newPos = transform.position;
-
-        
     }
 
 
@@ -45,10 +43,8 @@ public class Frog : MonoBehaviour
             
             newPos = transform.position + dirToPlayer;
 
-            transform.Rotate (Vector3(0,0,3) * Time.deltaTime);
+            transform.Rotate (new Vector3(0,0,3) * Time.deltaTime);
         }
-
-        
 
         if (jumpCDcurrent >= jumpCD)
         {
@@ -60,9 +56,6 @@ public class Frog : MonoBehaviour
             jumpReady = false;
             jumpCDcurrent = Mathf.Clamp(jumpCDcurrent, 0f, jumpCD);
         }
-
-        print(newPos + "pos");
-        print(dirToPlayer + "dir");
         
         transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
     }

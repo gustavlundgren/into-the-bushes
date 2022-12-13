@@ -6,16 +6,25 @@ public class followCam : MonoBehaviour
 {
     public float speed = 5f;
     private Vector3 target;
-    private Camera cam;
+
+    private bool first;
 
     public GameObject player;
 
     void Start()
     {
-        target = transform.position;
-        cam = Camera.main;
+        first = GameObject.Find("Game").GetComponent<Game>().firstLoad;
 
-        player = GameObject.Find("Player");
+        target = transform.position;
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        if (first)
+        {
+            DontDestroyOnLoad(this);
+
+            first = false;
+        }
     }
 
     void Update()

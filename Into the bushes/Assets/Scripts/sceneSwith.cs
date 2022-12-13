@@ -7,11 +7,21 @@ public class sceneSwith : MonoBehaviour
 {
     public Animator transition;
 
+    private Camera cam;
+
     public float transitionTime = 1f;
+
+    void Start()
+    {
+        cam = Camera.main;
+    }
+
 
     public void LoadNextLevel(int level)
     {
         StartCoroutine(LoadLevel(level));
+
+        cam.transform.position = new Vector3(0, 0, -10);
     }
 
     IEnumerator LoadLevel(int levelIndex)
