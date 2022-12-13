@@ -38,7 +38,7 @@ public class MoveToMouse : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Tent")
+        if (collision.gameObject.name == "Tent" || collision.gameObject.tag == "Wall")
         {
             target = transform.position;
 
@@ -46,5 +46,7 @@ public class MoveToMouse : MonoBehaviour
             foreach (GameObject ring in rings)
             GameObject.Destroy(ring);
         }
+
+        print(collision.gameObject);
     }
 }

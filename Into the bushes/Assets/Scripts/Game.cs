@@ -15,6 +15,8 @@ public class Game : MonoBehaviour
     public GameObject frog;
     public int frogCount;
 
+    [SerializeField] bool firstLoad = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +61,12 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+
+        if (GameObject.Find("Game"))
+        {
+            DontDestroyOnLoad(this);
+
+            firstLoad = false;
+        }
     }
 }
