@@ -203,7 +203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536850426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.01, y: -4.69, z: 0}
+  m_LocalPosition: {x: -5.96, y: 0.17, z: 0}
   m_LocalScale: {x: 2, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -473,7 +473,8 @@ MonoBehaviour:
   bird: {fileID: 2298210482132178025, guid: 2d6af23702ea5ae4bbcac0daead8681f, type: 3}
   birdCount: 3
   frog: {fileID: 730000050341315999, guid: a179a7bdb6da08f48a6d68c25f27255d, type: 3}
-  frogCount: 4
+  frogCount: 1
+  firstLoad: 1
 --- !u!4 &1349243489
 Transform:
   m_ObjectHideFlags: 0
@@ -654,7 +655,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952796463}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.06, z: 10}
+  m_LocalPosition: {x: -0.48, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3366,7 +3367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3546887872502110408, guid: 75f215c08a0aa5b42af2f86de61b5bbe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.98
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3546887872502110408, guid: 75f215c08a0aa5b42af2f86de61b5bbe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3431,11 +3432,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4528300969301974364, guid: 76a1875e68cdc2c4fb57a0fe786c83bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.53
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4528300969301974364, guid: 76a1875e68cdc2c4fb57a0fe786c83bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.06
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4528300969301974364, guid: 76a1875e68cdc2c4fb57a0fe786c83bc, type: 3}
       propertyPath: m_LocalPosition.z

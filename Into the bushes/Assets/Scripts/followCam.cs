@@ -20,16 +20,6 @@ public class followCam : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (Input.GetMouseButtonDown(0))
-        {
-            target = cam.ScreenToWorldPoint(Input.mousePosition);
-            target.z = transform.position.z;
-        }
-
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        */
-
         target = player.transform.position;
         target.z = transform.position.z;
 

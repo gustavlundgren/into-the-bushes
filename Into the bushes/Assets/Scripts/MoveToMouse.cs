@@ -46,7 +46,5 @@ public class MoveToMouse : MonoBehaviour
             foreach (GameObject ring in rings)
             GameObject.Destroy(ring);
         }
-
-        print(collision.gameObject);
     }
 }

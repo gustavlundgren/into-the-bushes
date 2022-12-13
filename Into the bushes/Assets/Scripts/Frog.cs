@@ -9,54 +9,55 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Frog : MonoBehaviour
 {
+    //public bool jumpReady;
+    //public float jumpCD = 1.5f;
+    //public float jumpCDcurrent = 0f;
+
+
     public GameObject player;
     public float speed = 500f;
-
-    public bool jumpReady;
-    public float jumpCD = 1.5f;
-    public float jumpCDcurrent = 0.0f;
-
-    private Rigidbody2D rigidbody2d;
-
-    private Vector3 target;
+    private Vector3 dirToPlayer;
+    private Vector3 newPos;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
 
-        target = transform.position;
-
-        rigidbody2d = transform.GetComponent<Rigidbody2D>();
+        newPos = transform.position;
     }
 
 
     // Update is called once per frame
     void Update()
     {
- 
-        if(jumpCDcurrent >= jumpCD)
+        dirToPlayer = transform.position - player.transform.position;
+
+        if (Vector2.Distance(transform.position, player.transform.position) < 4)
         {
-            jumpReady = true;
-        } else
-        {
-            jumpCDcurrent += Time.deltaTime;
-            jumpReady = false;
-            jumpCDcurrent = Mathf.Clamp(jumpCDcurrent, 0.0f, jumpCD);
+            // jumpCDcurrent = 0f;
+
+            
+            newPos = transform.position + dirToPlayer;
+
+            /*
+            if (jumpCDcurrent >= jumpCD)
+            {
+                jumpReady = true;
+            }
+            else
+            {
+                jumpCDcurrent += Time.deltaTime;
+                jumpReady = false;
+                jumpCDcurrent = Mathf.Clamp(jumpCDcurrent, 0f, jumpCD);
+            }
+            */
+            
         }
 
+        print(newPos + "pos");
+        print(dirToPlayer + "dir");
         
-
-        if (Vector3.Distance(transform.position, player.transform.position) < 4 && jumpReady)
-        {
-            target = new Vector3(5, 5, transform.position.z);
-
-            print("target " + target);
-            print("pos " + transform.position);
-            jumpCDcurrent = 0.0f;
-        }
-
-        //print(Time.deltaTime);
-        Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
     }
 }

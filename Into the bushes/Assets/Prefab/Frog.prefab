@@ -100,11 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a5fa8d4c15df44e98def66fc66e48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 5
-  jumpReady: 0
+  jumpReady: 1
   jumpCD: 1.2
   jumpCDcurrent: 0
+  player: {fileID: 0}
+  speed: 5
 --- !u!61 &6135880794768179922
 BoxCollider2D:
   m_ObjectHideFlags: 0
