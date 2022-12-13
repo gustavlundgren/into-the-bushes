@@ -15,13 +15,6 @@ public class ExitTent : MonoBehaviour
         {
             levelLoader.GetComponent<sceneSwith>().LoadNextLevel(0);
         }
-
-        if (Input.GetKeyDown("e"))
-        {
-           
-        } 
-        
-        print("e");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

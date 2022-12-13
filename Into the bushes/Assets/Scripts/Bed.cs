@@ -5,18 +5,38 @@ using UnityEngine;
 
 public class Bed : MonoBehaviour
 {
-
     public GameObject game;
-    public Game gameScript;
+    private Game gameScript;
+
+    private bool inBed;
 
     void Start()
     {
+        game = GameObject.Find("Game");
         gameScript = game.GetComponent<Game>();
-
     }
 
-        void OnTriggerStay2D(Collider2D other)
+    private void Update()
     {
-        print("enter");
+        if (inBed && Input.GetKeyDown("e") && !gameScript.day)
+        {
+            gameScript.day = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            inBed = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            inBed = false;
+        }
     }
 }
