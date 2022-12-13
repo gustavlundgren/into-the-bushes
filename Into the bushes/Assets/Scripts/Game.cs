@@ -8,12 +8,18 @@ public class Game : MonoBehaviour
     private float TimeOfDay;
     public bool day = true;
 
+    public GameObject player;
+
     public GameObject bird;
     public int birdCount;
+
+    private Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
+
         TimeOfDay = dayLenght;
 
         for (int i = 0; i < birdCount; i++)
@@ -33,5 +39,17 @@ public class Game : MonoBehaviour
 
             day = !day;
         }
+
+        if (day)
+        {
+            cam.backgroundColor = Color.blue;
+        }
+        else
+        {
+            cam.backgroundColor = Color.black;
+        }
+
+
+        print(player.transform.position);
     }
 }

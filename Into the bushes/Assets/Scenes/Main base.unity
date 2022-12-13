@@ -3417,6 +3417,10 @@ PrefabInstance:
       propertyPath: birdCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4977929431231924178, guid: a03b52b3f6828f040bc7c4726d876511, type: 3}
+      propertyPath: dayLenght
+      value: 240
+      objectReference: {fileID: 0}
     - target: {fileID: 4977929431231924179, guid: a03b52b3f6828f040bc7c4726d876511, type: 3}
       propertyPath: m_RootOrder
       value: 0
