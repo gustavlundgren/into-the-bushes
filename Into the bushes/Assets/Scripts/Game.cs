@@ -1,22 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    private float dayLenght = 200;
+    public float dayLenght = 10f;
     private float TimeOfDay;
     public bool day = true;
+
+    public GameObject player;
 
     public GameObject bird;
     public int birdCount;
 
+    private Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
+
         TimeOfDay = dayLenght;
+
+        for (int i = 0; i < birdCount; i++)
+        {
+            Instantiate(bird, new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 0f), transform.position.z), Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
@@ -33,24 +42,14 @@ public class Game : MonoBehaviour
 
         if (day)
         {
-            Camera.main.backgroundColor = Color.blue;
+            cam.backgroundColor = Color.blue;
         }
         else
         {
-            Camera.main.backgroundColor = Color.black;
+            cam.backgroundColor = Color.black;
         }
-    }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this);
 
-        if (SceneManager.GetActiveScene().buildIndex != 1)
-        {
-            for (int i = 0; i < birdCount; i++)
-            {
-                Instantiate(bird, new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 0f), transform.position.z), Quaternion.identity);
-            }
-        }
+        print(player.transform.position);
     }
 }

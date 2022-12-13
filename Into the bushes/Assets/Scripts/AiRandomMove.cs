@@ -7,6 +7,8 @@ public class AiRandomMove : MonoBehaviour
     public float speed = 5f;
     public float moveTime = 4f;
 
+    private float time = 0f;
+
     private Vector3 target;
 
 
