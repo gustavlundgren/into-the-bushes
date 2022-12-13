@@ -20,8 +20,6 @@ public class ExitTent : MonoBehaviour
         {
            
         } 
-        
-        print("e");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

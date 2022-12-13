@@ -5,21 +5,15 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
     public float dayLenght = 10f;
-    private float TimeOfDay;
-    public bool day = true;
-
-    public GameObject player;
+    public float TimeOfDay;
+    public bool day;
 
     public GameObject bird;
     public int birdCount;
 
-    private Camera cam;
-
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
-
         TimeOfDay = dayLenght;
 
         for (int i = 0; i < birdCount; i++)
@@ -42,14 +36,17 @@ public class Game : MonoBehaviour
 
         if (day)
         {
-            cam.backgroundColor = Color.blue;
+            Camera.main.backgroundColor = Color.blue;
         }
-        else
+
+        if (!day)
         {
-            cam.backgroundColor = Color.black;
+            Camera.main.backgroundColor = Color.black;
         }
+    }
 
-
-        print(player.transform.position);
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
     }
 }

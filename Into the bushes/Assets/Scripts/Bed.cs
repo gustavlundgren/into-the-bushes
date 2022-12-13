@@ -9,14 +9,35 @@ public class Bed : MonoBehaviour
     public GameObject game;
     public Game gameScript;
 
+    private bool inBed;
+
     void Start()
     {
+        game = GameObject.Find("Game");
         gameScript = game.GetComponent<Game>();
-
     }
 
-        void OnTriggerStay2D(Collider2D other)
+    void Update()
     {
-        print("enter");
+        if (inBed && !gameScript.day && Input.GetKeyDown("e"))
+        {
+            gameScript.day = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            inBed = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            inBed = false;
+        }
     }
 }
