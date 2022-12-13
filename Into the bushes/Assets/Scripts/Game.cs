@@ -15,11 +15,18 @@ public class Game : MonoBehaviour
     public GameObject frog;
     public int frogCount;
 
-    [SerializeField] bool firstLoad = true;
+    public bool firstLoad = true;
+
+    private Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        firstLoad = GameObject.Find("Game").GetComponent<Game>().firstLoad;
+
+        cam = Camera.main;      
+
         TimeOfDay = dayLenght;
 
         if (SceneManager.GetActiveScene().buildIndex != 1)
@@ -33,6 +40,14 @@ public class Game : MonoBehaviour
             {
                 Instantiate(frog, new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 0f), transform.position.z), Quaternion.identity);
             }
+        }
+
+
+        if (firstLoad)
+        {
+            DontDestroyOnLoad(this);
+
+            firstLoad = false;
         }
     }
 
@@ -50,23 +65,12 @@ public class Game : MonoBehaviour
 
         if (day)
         {
-            Camera.main.backgroundColor = Color.blue;
+            cam.backgroundColor = Color.blue;
         }
 
         if (!day)
         {
-            Camera.main.backgroundColor = Color.black;
-        }
-    }
-
-    private void Awake()
-    {
-
-        if (GameObject.Find("Game"))
-        {
-            DontDestroyOnLoad(this);
-
-            firstLoad = false;
+            cam.backgroundColor = Color.black;
         }
     }
 }
