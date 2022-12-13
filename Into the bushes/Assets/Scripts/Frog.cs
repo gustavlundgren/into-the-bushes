@@ -7,11 +7,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Frog : MonoBehaviour
 {
-    [SerializeField] public GameObject player;
-    public float speed = 3f;
-
-    public Vector2 playerpos; 
-    
+    public GameObject player;
+    public float speed;
 
 
     // Start is called before the first frame update
@@ -23,8 +20,6 @@ public class Frog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerpos = player.transform.position; 
-
         if (Vector2.Distance(transform.position, player.transform.position) < 4)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, -speed * Time.deltaTime);

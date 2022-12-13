@@ -35,4 +35,16 @@ public class MoveToMouse : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Tent")
+        {
+            target = transform.position;
+
+            GameObject[] rings = GameObject.FindGameObjectsWithTag("Ring");
+            foreach (GameObject ring in rings)
+            GameObject.Destroy(ring);
+        }
+    }
 }

@@ -8,15 +8,19 @@ public class followCam : MonoBehaviour
     private Vector3 target;
     private Camera cam;
 
+    public GameObject player;
 
     void Start()
     {
         target = transform.position;
         cam = Camera.main;
+
+        player = GameObject.Find("Player");
     }
 
     void Update()
     {
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             target = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -24,5 +28,11 @@ public class followCam : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        */
+
+        target = player.transform.position;
+        target.z = transform.position.z;
+
+        transform.position = target;
     }
 }

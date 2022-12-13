@@ -22,6 +22,7 @@ public class Bed : MonoBehaviour
         if (inBed && !gameScript.day && Input.GetKeyDown("e"))
         {
             gameScript.day = true;
+            gameScript.TimeOfDay = gameScript.dayLenght;
         }
     }
 

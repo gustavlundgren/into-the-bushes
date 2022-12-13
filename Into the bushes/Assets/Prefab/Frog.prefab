@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 730000050341315998}
   - component: {fileID: 6135880794768179922}
   - component: {fileID: 2753473517310879646}
+  - component: {fileID: -1820846330316557459}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Untagged
@@ -101,7 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3546887872502110410, guid: 75f215c08a0aa5b42af2f86de61b5bbe, type: 3}
   speed: 5
-  playerpos: {x: 0, y: 0}
 --- !u!61 &6135880794768179922
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +149,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &-1820846330316557459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730000050341315999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aca242e18958eb4380a152470c2a75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFlying: 0
+  biom: Plains
+  spawnRate: 4
+  type: Frog

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -11,14 +12,25 @@ public class Game : MonoBehaviour
     public GameObject bird;
     public int birdCount;
 
+    public GameObject frog;
+    public int frogCount;
+
     // Start is called before the first frame update
     void Start()
     {
         TimeOfDay = dayLenght;
 
-        for (int i = 0; i < birdCount; i++)
+        if (SceneManager.GetActiveScene().buildIndex != 1)
         {
-            Instantiate(bird, new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 0f), transform.position.z), Quaternion.identity);
+            for (int i = 0; i < birdCount; i++)
+            {
+                Instantiate(bird, new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 0f), transform.position.z), Quaternion.identity);
+            }
+
+            for (int i = 0; i < frogCount; i++)
+            {
+                Instantiate(frog, new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 0f), transform.position.z), Quaternion.identity);
+            }
         }
     }
 
